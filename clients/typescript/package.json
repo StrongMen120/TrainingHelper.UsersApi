@@ -1,0 +1,25 @@
+{
+  "name": "@trainerhelper/users-api",
+  "version": "0.1.1",
+  "description": "JS/TS client for Training.Users API",
+  "author": "Przemyslaw Gogacz (@s196063)",
+  "homepage": "https://dev.azure.com/s196063/TrainerHelper/_git/Training.Users?path&#x3D;/clients/typescript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^4.0"
+  },
+  "publishConfig": {
+    "registry": "https://pkgs.dev.azure.com/s196063/TrainerHelper/_packaging/TrainerFeed/npm/registry/"
+  }
+}

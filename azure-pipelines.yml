@@ -1,0 +1,19 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger: none
+
+jobs:
+  - job: build_application
+    pool:
+        vmImage: 'windows-latest'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore DotNet'
+      inputs:
+        command: 'restore'
+        projects: 'src/**/*.csproj'
+    - task: DotNetCoreCLI@2
+      displayName: 'Build DotNet'
+      inputs:
+        command: 'build'
+        projects: 'src/**/*.csproj'

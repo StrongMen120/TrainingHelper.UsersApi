@@ -1,0 +1,35 @@
+'$$_documentation_$$': https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/typescript-fetch.md
+allowUnicodeIdentifiers: false
+disallowAdditionalPropertiesIfNotPresent: true
+ensureUniqueParams: true
+enumUnknownDefaultCase: true
+fileContentDataType: Blob
+framework: fetch-api
+legacyDiscriminatorBehavior: false
+modelPropertyNaming: camelCase
+platform: browser
+prependFormOrBodyParameters: false
+snapshot: false
+sortModelPropertiesByRequiredFlag: true
+sortParamsByRequiredFlag: true
+supportsES6: true
+useInversify: false
+useObjectParameters: true
+useRxJS: false
+
+# Template configuration
+additionalProperties:
+  packageName: '@trainerhelper/plans-api'
+  packageVersion: 0.1.0
+  packageAuthors: Przemyslaw Gogacz
+  packageCompany: TrainerHelper
+  packageDescription: 'JS/TS client for Training.Plans API'
+  packageHomepage: https://dev.azure.com/s196063/TrainerHelper/_git/Training.Plans?path=/clients/typescript
+  releaseNote: Updated to match plans-api
+  npmRepository: https://pkgs.dev.azure.com/s196063/TrainerHelper/_packaging/TrainerFeed/npm/registry/
+
+# Additional generator templates
+templateDir: template
+files:
+  package.json.mustache:
+    destinationFilename: package.json

@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch (api) [5002]",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/Training.API.Users/bin/Debug/net7.0/Training.API.Users.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Training.API.Users",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5002"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/src/Training.API.Users/Views"
+      }
+    }
+  ]
+}

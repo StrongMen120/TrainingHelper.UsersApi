@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "dotnet",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/src/Training.API.Users"
+      },
+      "args": [
+        "build",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "generate-openapi",
+      "dependsOn": ["build"],
+      "command": "dotnet",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/src/Training.API.Users"
+      },
+      "args": [
+        "swagger",
+        "tofile",
+        "--output",
+        "../../docs/openapi.json",
+        "./bin/Debug/net7.0/Training.API.Users.dll",
+        "all"
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "generate-client-typescript",
+      "command": "npx",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/clients/typescript"
+      },
+      "args": [
+        "@openapitools/openapi-generator-cli",
+        "generate",
+        "-i",
+        "../../docs/openapi.json",
+        "-o",
+        ".",
+        "-g",
+        "typescript-fetch",
+        "-c",
+        "./typescript-fetch.yaml"
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "generate-client-dotnet",
+      "command": "npx",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/clients/dotnet"
+      },
+      "args": [
+        "@openapitools/openapi-generator-cli",
+        "generate",
+        "-i",
+        "../../docs/openapi.json",
+        "-o",
+        ".",
+        "-g",
+        "csharp-netcore",
+        "-c",
+        "./csharp-netcore.yaml"
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "generate-clients",
+      "dependsOn": ["generate-client-dotnet", "generate-client-typescript"],
+      "problemMatcher": []
+    }
+  ]
+}

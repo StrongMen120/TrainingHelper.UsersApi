@@ -1,0 +1,42 @@
+'$$_documentation_$$': https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/typescript-fetch.md
+allowUnicodeIdentifiers: false
+disallowAdditionalPropertiesIfNotPresent: true
+ensureUniqueParams: true
+enumNameSuffix: Enum
+enumPropertyNaming: original
+legacyDiscriminatorBehavior: false
+modelPropertyNaming: camelCase
+nullSafeAdditionalProps: true
+paramNaming: camelCase
+prefixParameterInterfaces: false
+prependFormOrBodyParameters: false
+snapshot: false
+sortModelPropertiesByRequiredFlag: true
+sortParamsByRequiredFlag: true
+supportsES6: true
+typescriptThreePlus: true
+useSingleRequestParameter: false
+useObjectParameters: true
+withInterfaces: true
+withoutRuntimeChecks: false
+
+# Template configuration
+additionalProperties:
+  packageName: '@trainerhelper/users-api'
+  packageVersion: 0.1.1
+  packageAuthors: Przemyslaw Gogacz (@s196063)
+  packageCompany: s196063
+  packageDescription: 'JS/TS client for Training.Users API'
+  packageHomepage: https://dev.azure.com/s196063/TrainerHelper/_git/Training.Users?path=/clients/typescript
+  releaseNote: Updated to match users-api
+  npmRepository: https://pkgs.dev.azure.com/s196063/TrainerHelper/_packaging/TrainerFeed/npm/registry/
+
+# Additional generator templates
+templateDir: template
+files:
+  package.json.mustache:
+    destinationFilename: package.json
+  tsconfig.mustache:
+    destinationFilename: tsconfig.json
+  tsconfig.esm.mustache:
+    destinationFilename: tsconfig.esm.json
